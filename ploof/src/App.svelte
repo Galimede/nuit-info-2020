@@ -25,6 +25,10 @@
   .content {
     margin-left: 2em;
   }
+
+  .map {
+  position: fixed;
+  }
 </style>
 
 
@@ -33,7 +37,6 @@
 <div class="header">
   <Header />
 </div>
-Contenu...
 <div class="map">
     { #if ready}
         <Map></Map>

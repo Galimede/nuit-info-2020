@@ -18,6 +18,12 @@
             zoom,
             center,
         });
+
+        new google.maps.Marker({
+            position: center,
+            map,
+            title: "Me",
+        });
     }
 
     function error(){
