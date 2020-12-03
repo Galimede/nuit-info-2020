@@ -1,9 +1,11 @@
 import express from 'express';
-import exampleRouter from './routes/route.js';
+import spots from './routes/spots.js';
 
 const app = express();
-const port = 3000;
+const port = 8000;
 
-app.use('/example', exampleRouter);
+app.use('/spots', spots);
 
-app.listen(port, () => console.log(`Hello world app listening on port ${port}!`));
+app.listen(port, () => console.log(`The api listening on port localhost:${port}!`));
+
+export default app;
