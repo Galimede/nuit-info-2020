@@ -1,7 +1,11 @@
 <script>
+
   const world = 'world'; // edit world and save to see hmr update
   import Map from './Map.svelte';
   export let ready;
+
+  import Header from "./Header.svelte";
+
 
 </script>
 
@@ -18,9 +22,24 @@
   :global(body){
       padding: 0;
   }
+.header {
+    margin-bottom: 1rem;
+}
 </style>
 
-<h1>Hello {world}</h1>
-{ #if ready}
-    <Map></Map>
-{/if}
+
+
+
+<div class="header">
+<Header />
+</div>
+Contenu...
+<div class="map">
+    { #if ready}
+        <Map></Map>
+    {/if}
+</div>
+
+
+
+

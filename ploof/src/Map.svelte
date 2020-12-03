@@ -1,6 +1,6 @@
 <script>
     import { writable } from "svelte/store";
-    import Store from "./store.js";
+    import Store from "./store";
     let container;
     let map;
     let zoom = 8;
@@ -21,7 +21,7 @@
     }
 
     function error(){
-        consoole.log('Unable to retrieve your location');
+        console.log('Unable to retrieve your location');
     }
 
     onMount(async () => {
