@@ -17,5 +17,8 @@ module.exports = {
       'padded-blocks': 'off',
       'quotes': ['error', 'single', { 'allowTemplateLiterals': true }],
       'semi': ['error', 'always'],
+      'indent': 0,
+      'no-tabs': 0,
+      'quote-props': 0,
     },
   };
