@@ -13,6 +13,8 @@ describe('/spots/', () => {
         request(`${baseUrl}/spots/`, (response, body) => {
           body.should.have.property(spots);
           body.spots.should.be.a('array');
+
+          done();
         });
       });
     });
@@ -35,6 +37,6 @@ describe('/spots/', () => {
 
             done();
           });
+        });
     });
-  });
 });

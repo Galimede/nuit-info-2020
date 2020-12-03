@@ -6,4 +6,4 @@ const port = 8000;
 
 app.use('/spots', spots);
 
-app.listen(port, () => console.log(`Hello world app listening on port ${port}!`));
+app.listen(port, () => console.log(`The api listening on port localhost:${port}!`));
