@@ -1,11 +1,9 @@
-const express = require('express')
+import express from 'express';
+import exampleRouter from './routes/route.js';
 
-const app = express()
+const app = express();
+const port = 3000;
 
-const port = 3000
+app.use('/example', exampleRouter);
 
-app.get('/', (req, res) => {
-    res.send('Hello World');
-});
-
-app.listen(port, () => console.log(`Hello world app listening on port ${port}!`))
+app.listen(port, () => console.log(`Hello world app listening on port ${port}!`));
