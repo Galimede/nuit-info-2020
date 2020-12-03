@@ -1,12 +1,16 @@
 <script>
-  const world = 'world'; // edit world and save to see hmr update
+  import Header from "./Header.svelte";
+
 </script>
 
 <style>
-  h1 {
-    color: orangered; /* change color an save to see hmr update */
+  .header {
+    margin-bottom: 1rem;
   }
 </style>
 
-<h1>Hello {world}</h1>
-<p>Open App.svelte in your editor and change something to see HMR in action</p>
+<div class="header">
+<Header />
+</div>
+
+Contenu...
