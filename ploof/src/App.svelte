@@ -1,16 +1,22 @@
 <script>
   import Header from "./Header.svelte";
-
 </script>
 
 <style>
+  
   .header {
     margin-bottom: 1rem;
+  }
+
+  .content {
+    margin-left: 2em;
   }
 </style>
 
 <div class="header">
-<Header />
+  <Header />
 </div>
 
-Contenu...
+<div class="content">
+  Contenu...
+</div>
