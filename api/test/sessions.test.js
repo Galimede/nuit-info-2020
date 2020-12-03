@@ -1,39 +1,45 @@
 /* eslint-disable no-unused-vars */
 /* eslint-disable no-undef */
 import chai from 'chai';
-import { request } from 'express';
-import { settings } from '../config.js';
+import chaiHttp from 'chai-http';
+import request from 'express';
+// import settings from '../config.js';
+import app from '../index.js';
 
+chai.use(chaiHttp);
 const should = chai.should;
-const baseUrl = settings.base_url;
+// const baseUrl = settings.base_url;
+
 
 describe('/sessions/', () => {
     describe('GET /', () => {
       it('should send all sessions', () => {
-        request(`${baseUrl}/sessions/`, (response, body) => {
-          body.should.have.property(sessions);
-          body.sessions.should.be.a('array');
-
-          done();
-        });
+        chai.request(app)
+            .get('/sessions')
+            .end((res) => {
+                res.body.should.have.property(sessions);
+                res.body.sessions.should.be.a('array');
+                done();
+            });
       });
     });
     describe('GET /:id', () => {
         it('should send the spot', () => {
-          request(`${baseUrl}/sessions/1`, (response, body) => {
-            body.should.have.property('datetime_start');
-            body.should.have.property('datetime_end');
-            body.should.have.property('spot');
-            body.should.have.property('waterman');
-            body.should.have.property('ville');
+        chai.request(app)
+            .get('/sessions/1')
+            .end((res) => {
+                res.body.should.have.property('datetime_start');
+                res.body.should.have.property('datetime_end');
+                res.body.should.have.property('spot');
+                res.body.should.have.property('waterman');
+                res.body.should.have.property('ville');
 
-            body.datetime_start.should.be.a('datetime');
-            body.datetime_end.should.be.a('datetime');
-            body.spot.should.be.a('object');
-            body.waterman.should.be.a('string');
-            body.ville.should.be.a('string');
-
-            done();
+                res.body.datetime_start.should.be.a('datetime');
+                res.body.datetime_end.should.be.a('datetime');
+                res.body.spot.should.be.a('object');
+                res.body.waterman.should.be.a('string');
+                res.body.ville.should.be.a('string');
+                done();
           });
         });
     });
