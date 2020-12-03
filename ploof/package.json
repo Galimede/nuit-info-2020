@@ -2,11 +2,19 @@
   "name": "ploof",
   "version": "0.0.0",
   "scripts": {
-    "dev": "svite",
-    "build": "svite build"
+    "lint": "eslint src",
+    "lint:fix": "eslint --fix src",
+    "dev": "npm run lint && svite",
+    "build": "npm run lint && svite build"
   },
   "dependencies": {},
   "devDependencies": {
+    "eslint": "^7.14.0",
+    "eslint-config-standard": "^16.0.2",
+    "eslint-plugin-import": "^2.22.1",
+    "eslint-plugin-node": "^11.1.0",
+    "eslint-plugin-promise": "^4.2.1",
+    "eslint-plugin-standard": "^5.0.0",
     "svelte": "^3.29.7",
     "svelte-hmr": "^0.11.6",
     "svite": "^0.8.1"
