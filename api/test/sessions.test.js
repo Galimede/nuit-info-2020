@@ -32,13 +32,13 @@ describe('/sessions/', () => {
                 res.body.should.have.property('datetime_end');
                 res.body.should.have.property('spot');
                 res.body.should.have.property('waterman');
-                res.body.should.have.property('ville');
+                res.body.should.have.property('city');
 
                 res.body.datetime_start.should.be.a('datetime');
                 res.body.datetime_end.should.be.a('datetime');
                 res.body.spot.should.be.a('object');
                 res.body.waterman.should.be.a('string');
-                res.body.ville.should.be.a('string');
+                res.body.city.should.be.a('string');
                 done();
           });
         });

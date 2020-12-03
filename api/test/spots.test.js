@@ -31,17 +31,17 @@ describe('/spots/', () => {
             .end((res) => {
               res.body.should.have.property('longitude');
               res.body.should.have.property('latitude');
-              res.body.should.have.property('baigneurs');
+              res.body.should.have.property('swimmers');
               res.body.should.have.property('score_polution');
-              res.body.should.have.property('bateaux');
-              res.body.should.have.property('pratiquants');
+              res.body.should.have.property('boats');
+              res.body.should.have.property('adherent');
 
               res.body.longitude.should.be.a('number');
               res.body.latitude.should.be.a('number');
-              res.body.baigneurs.should.be.a('number');
+              res.body.swimmers.should.be.a('number');
               res.body.score_polution.should.be.a('number');
-              res.body.bateaux.should.be.a('object');
-              res.body.pratiquants.should.be.a('number');
+              res.body.boats.should.be.a('object');
+              res.body.adherent.should.be.a('number');
               done();
           });
         });
