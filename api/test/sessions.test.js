@@ -4,12 +4,12 @@ import chai from 'chai';
 import chaiHttp from 'chai-http';
 import request from 'express';
 // import settings from '../config.js';
+// eslint-disable-next-line import/no-useless-path-segments
 import app from '../index.js';
 
 chai.use(chaiHttp);
 const should = chai.should;
 // const baseUrl = settings.base_url;
-
 
 describe('/sessions/', () => {
     describe('GET /', () => {

@@ -4,6 +4,7 @@ import chai from 'chai';
 import chaiHttp from 'chai-http';
 import request from 'express';
 // import settings from '../config.js';
+// eslint-disable-next-line import/no-useless-path-segments
 import app from '../index.js';
 
 chai.use(chaiHttp);
@@ -21,7 +22,7 @@ describe('/spots/', () => {
               res.body.spots.should.be.a('array');
               done();
         });
-        
+
       });
     });
     describe('GET /:id', () => {
